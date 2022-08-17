@@ -6,7 +6,6 @@
     </button>
 
 
-
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
@@ -107,7 +106,8 @@
                     </div>
                     <div class="font-weight-bold">
                         <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                            problem I've been having.</div>
+                            problem I've been having.
+                        </div>
                         <div class="small text-gray-500">Emily Fowler · 58m</div>
                     </div>
                 </a>
@@ -119,7 +119,8 @@
                     </div>
                     <div>
                         <div class="text-truncate">I have the photos that you ordered last month, how
-                            would you like them sent to you?</div>
+                            would you like them sent to you?
+                        </div>
                         <div class="small text-gray-500">Jae Chun · 1d</div>
                     </div>
                 </a>
@@ -131,7 +132,8 @@
                     </div>
                     <div>
                         <div class="text-truncate">Last month's report looks great, I am very happy with
-                            the progress so far, keep up the good work!</div>
+                            the progress so far, keep up the good work!
+                        </div>
                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                     </div>
                 </a>
@@ -143,7 +145,8 @@
                     </div>
                     <div>
                         <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                            told me that people say this to all dogs, even if they aren't good...</div>
+                            told me that people say this to all dogs, even if they aren't good...
+                        </div>
                         <div class="small text-gray-500">Chicken the Dog · 2w</div>
                     </div>
                 </a>
@@ -199,10 +202,19 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body"> Are you want to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="{{route('login')}}">Logout</a>
+
+
+                <form action="{{ route('logout') }}"
+                      method="post" style="display: inline-block">
+                    {{csrf_field()}}
+                    <button type="submit"
+                            class="btn btn-danger delete">logout
+                    </button>
+
+                </form>
             </div>
         </div>
     </div>

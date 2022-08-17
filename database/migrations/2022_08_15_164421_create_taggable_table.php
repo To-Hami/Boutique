@@ -13,7 +13,7 @@ class CreateTaggableTable extends Migration
      */
     public function up()
     {
-        Schema::create('taggable', function (Blueprint $table) {
+        Schema::create('taggables', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tag_id');
             $table->unsignedBigInteger('taggable_id');

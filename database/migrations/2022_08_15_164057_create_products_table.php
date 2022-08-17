@@ -20,9 +20,9 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->double('price');
             $table->unsignedBigInteger('quantity')->default(0);
-            $table->boolean('featured')->default('false');
-            $table->boolean('status')->default('false');
-            $table->foreignId('product_category_id')->constrained()->cascadeOnDelete();
+            $table->boolean('featured')->default(false);
+            $table->boolean('status')->default(false);
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
 
             $table->timestamps();
         });

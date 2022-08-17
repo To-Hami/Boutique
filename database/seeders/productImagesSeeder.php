@@ -1,0 +1,35 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Tag;
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
+
+class productImagesSeeder extends Seeder
+{
+
+    public function run()
+    {
+        $images[] = [ 'file_name' => '01.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '02.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '03.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '04.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '05.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '06.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '07.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '08.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '09.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '010.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+        $images[] = [ 'file_name' => '011.jpg','file_type'=> 'image/jpg' ,'file_size' => rand(100,900) , 'file_status' => true ,'file_sort' => 0 ];
+
+        Product::all()->each(function($product)use($images){
+            $product->media()->createMany(Arr::random($images,rand(2,3)));
+
+        });
+
+    }
+}

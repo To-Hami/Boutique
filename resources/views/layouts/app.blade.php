@@ -92,12 +92,14 @@
                         @endguest
                         @auth()
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle nav-link dropdown-toggle" id="authDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Welcome   {{ auth()->user()->full_name  }}
+                                <a href="#" class="nav-link dropdown-toggle nav-link dropdown-toggle" id="authDropdown"
+                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Welcome {{ auth()->user()->full_name  }}
                                 </a>
                                 <div class="dropdown-menu mt-3" aria-labelledby="authDropdown">
-                                    <a href="{{route('dashboard')}}" class="dropdown-item border-0">Dashboard</a>
-                                    <a href="javascript:void(0);" class="dropdown-item border-0" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                    <a href="{{route('admin.dashboard')}}" class="dropdown-item border-0">Dashboard</a>
+                                    <a href="javascript:void(0);" class="dropdown-item border-0"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                     <form action="{{ route('logout') }}" method="post" id="logout-form" class="d-none">
                                         @csrf
                                     </form>

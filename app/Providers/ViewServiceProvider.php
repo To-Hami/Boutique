@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\ProductCategory;
+use App\Models\Category;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 use phpDocumentor\Reflection\DocBlock\Tag;
@@ -24,7 +24,7 @@ class ViewServiceProvider extends ServiceProvider
         if (!request()->is('admin/*')) {
             view()->composer('*', function ($view) {
                 if (!Cache::has('shop_categories_menu')) {
-                    Cache::forever('shop_categories_menu', ProductCategory::tree());
+                    Cache::forever('shop_categories_menu', Category::tree());
                 }
                 $shop_categories_menu = Cache::get('shop_categories_menu');
 

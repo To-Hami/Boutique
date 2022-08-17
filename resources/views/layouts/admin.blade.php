@@ -20,6 +20,11 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    <link href="{{asset('backend/vendor/bootstrap-fileinput/css/fileinput.min.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <link href="{{asset('backend/vendor/summerNots/summernote-bs4.min.css')}}" rel="stylesheet">
+
+
 </head>
 
 
@@ -29,9 +34,7 @@
 <div id="wrapper">
 
 
-
     @include('layouts._aside-admin')
-
 
 
     <div id="content-wrapper" class="d-flex flex-column">
@@ -44,7 +47,7 @@
 
 
 
-                @yield('content')
+            @yield('content')
 
 
         </div>
@@ -64,11 +67,9 @@
     <!-- End of Content Wrapper --> <!-- Content Wrapper -->
 
 
-
 </div>
 
 <!-- Page Wrapper -->
-
 
 
 <!-- Bootstrap core JavaScript-->
@@ -87,7 +88,15 @@
 <!-- Page level custom scripts -->
 <script src="{{asset('backend/js/demo/chart-area-demo.js')}}"></script>
 <script src="{{asset('backend/js/demo/chart-pie-demo.js')}}"></script>
+<script src="{{asset('backend/js/custom.js')}}"></script>
+<script src="{{asset('backend/vendor/bootstrap-fileinput/js/plugins/piexif.min.js')}}"></script>
+<script src="{{asset('backend/vendor/bootstrap-fileinput/js/fileinput.min.js')}}"></script>
+<script src="{{asset('backend/vendor/bootstrap-fileinput/themes/fa5/theme.js')}}"></script>
+<script src="{{asset('backend/vendor/select2/select2.min.js')}}"></script>
+<script src="{{asset('backend/vendor/summerNots/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('backend/vendor/summerNots/summernote-bs4.min.js.map')}}"></script>
 
+@stack('scripts')
 </body>
 
 </html>

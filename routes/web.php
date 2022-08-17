@@ -28,26 +28,27 @@ Route::get('detail', [FrontendController::class, 'detail'])->name('detail');
 Route::get('shop', [FrontendController::class, 'shop'])->name('shop');
 
 
-
-
 /********************** Dashboard   ******************************************/
 
-Route::group(['prefix' => '/admin/'], function () {
+Route::prefix('/admin/')->name('admin.')->group(function () {
 
-
+// auth route ====================================================================
     Route::get('login', [App\Http\Controllers\Backend\BackendController::class, 'login'])->name('adminLogin');
     Route::get('forgot', [App\Http\Controllers\Backend\BackendController::class, 'forgot'])->name('forgot');
-
     Route::get('index', [App\Http\Controllers\Backend\BackendController::class, 'dashboard'])->name('dashboard');
     Route::get('register', [App\Http\Controllers\Backend\BackendController::class, 'register'])->name('adminRegister');
 
-    Route::resource('product_categories',ProductCategoriesController::class);
+
+    // category route ====================================================================
+    Route::post('categories/delete', [\App\Http\Controllers\Backend\CategoryController::class, 'delete_image'])->name('categories.delete_image');
+    Route::resource('categories', \App\Http\Controllers\Backend\CategoryController::class);
+
+    // product route ====================================================================
+    Route::post('products/delete', [\App\Http\Controllers\Backend\ProductController::class, 'delete_image'])->name('products.delete_image');
+    Route::resource('products', \App\Http\Controllers\Backend\ProductController::class);
+
+
+    // tag route ====================================================================
+    Route::resource('tags', \App\Http\Controllers\Backend\TagController::class);
 
 });
-
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
