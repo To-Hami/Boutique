@@ -225,6 +225,7 @@
 <script src="{{   asset('frontend/vendor/swiper/swiper-bundle.min.js')}}"></script>
 <script src="{{   asset('frontend/vendor/choices.js/public/assets/scripts/choices.min.js')}}"></script>
 <script src="{{   asset('frontend/vendor/owl/owl.carousel.min.js')}}"></script>
+<script src="{{   asset('frontend/vendor/owl/owl.carousel.min.js')}}"></script>
 
 <script src="{{   asset('frontend/js/front.js')}}"></script>
 <script src="{{  asset('js/app.js') }}"></script>

@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\backend\couponController;
 use App\Http\Controllers\Backend\ProductCategoriesController;
+use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,15 +44,16 @@ Route::prefix('/admin/')->name('admin.')->group(function () {
 
 
     // category route ====================================================================
-    Route::post('categories/delete', [\App\Http\Controllers\Backend\CategoryController::class, 'delete_image'])->name('categories.delete_image');
-    Route::resource('categories', \App\Http\Controllers\Backend\CategoryController::class);
+    Route::post('categories/delete', [CategoryController::class, 'delete_image'])->name('categories.delete_image');
+    Route::resource('categories', CategoryController::class);
 
     // product route ====================================================================
-    Route::post('products/delete', [\App\Http\Controllers\Backend\ProductController::class, 'delete_image'])->name('products.delete_image');
-    Route::resource('products', \App\Http\Controllers\Backend\ProductController::class);
+    Route::post('products/delete', [ProductController::class, 'delete_image'])->name('products.delete_image');
+    Route::resource('products', ProductController::class);
+    Route::resource('coupons', couponController::class);
 
 
     // tag route ====================================================================
-    Route::resource('tags', \App\Http\Controllers\Backend\TagController::class);
+    Route::resource('tags', TagController::class);
 
 });

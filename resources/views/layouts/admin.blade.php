@@ -23,7 +23,13 @@
     <link href="{{asset('backend/vendor/bootstrap-fileinput/css/fileinput.min.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <link href="{{asset('backend/vendor/summerNots/summernote-bs4.min.css')}}" rel="stylesheet">
-
+    <link href="{{asset('backend/vendor/datepicker/themes/classic.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/vendor/datepicker/themes/classic.date.css')}}" rel="stylesheet">
+    <style>
+        .picker__select--year, .picker__select--month {
+            height: 39px;
+        }
+    </style>
 
 </head>
 
@@ -95,6 +101,9 @@
 <script src="{{asset('backend/vendor/select2/select2.min.js')}}"></script>
 <script src="{{asset('backend/vendor/summerNots/summernote-bs4.min.js')}}"></script>
 <script src="{{asset('backend/vendor/summerNots/summernote-bs4.min.js.map')}}"></script>
+<script src="{{asset('backend/vendor/datepicker/picker.js')}}"></script>
+<script src="{{asset('backend/vendor/datepicker/picker.date.js')}}"></script>
+<script src="{{asset('backend/vendor/datepicker/picker.time.js')}}"></script>
 
 @stack('scripts')
 </body>
