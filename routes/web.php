@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\backend\couponController;
+use App\Http\Controllers\backend\CustomerController;
 use App\Http\Controllers\Backend\ProductCategoriesController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\backend\ReviewController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
@@ -55,5 +57,13 @@ Route::prefix('/admin/')->name('admin.')->group(function () {
 
     // tag route ====================================================================
     Route::resource('tags', TagController::class);
+
+    //  reviews route ====================================================================
+    Route::resource('reviews', ReviewController::class);
+
+
+    // customers route ====================================================================
+    Route::post('customers/delete', [CustomerController::class, 'delete_image'])->name('customer.delete_image');
+    Route::resource('customers', CustomerController::class);
 
 });

@@ -1,5 +1,5 @@
 <div class="card-body">
-    <form action="{{route('admin.customers.index')}}" method="get">
+    <form action="{{route('admin.coupons.index')}}" method="get">
 
         <div class="row">
             <div class="col-2">
@@ -13,6 +13,7 @@
             <div class="col-2">
                 <div class="form-group">
                     <select name="status" class="form-control">
+                        <option value="" disabled> Status</option>
                         <option value="1" {{old('status',request()->input('status') == '1' ? 'selected' :  '')}}>
                             Active
                         </option>

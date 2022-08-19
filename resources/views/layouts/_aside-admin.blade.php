@@ -62,9 +62,29 @@
                 <a class="collapse-item" href="{{route('admin.products.index')}}">Products</a>
                 <hr>
                 <a class="collapse-item" href="{{route('admin.coupons.index')}}">Coupons</a>
+                <hr>
+                <a class="collapse-item" href="{{route('admin.reviews.index')}}">Reviews</a>
             </div>
         </div>
 
+    </li>
+
+
+
+
+
+    <!-- Nav Item - Pages customers Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customers"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-tag"></i>
+            <span>Customers</span>
+        </a>
+        <div id="customers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.customers.index')}}">Customers</a>
+            </div>
+        </div>
     </li>
 
 

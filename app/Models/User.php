@@ -12,7 +12,8 @@ use Mindscms\Entrust\Traits\EntrustUserWithPermissionsTrait;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
-  //  use  EntrustUserWithPermissionsTrait; // add this trait to your user model
+
+    //  use  EntrustUserWithPermissionsTrait; // add this trait to your user model
 
 
     /**
@@ -24,6 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'first_name',
         'last_name',
         'user_image',
+        'username',
         'statues',
         'mobile',
         'email',
@@ -41,7 +43,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
-    protected $appends=['full_name'];
+    protected $appends = ['full_name'];
 
     /**
      * The attributes that should be cast.
@@ -52,7 +54,22 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function getFullNameAttribute(){
+    public function getFullNameAttribute()
+    {
         return ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
     }
+
+    // function ========================================================
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+
+    public function status()
+    {
+        return $this->status == 1 ? 'Active' : 'In Active';
+    }
+
+
 }
