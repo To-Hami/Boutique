@@ -33,7 +33,6 @@ class TagController extends Controller
 
     }
 
-
     public function store(TagRequest $request)
     {
         $input['name'] = $request->name;
@@ -59,7 +58,6 @@ class TagController extends Controller
         return view('backend.tags.edit', compact('tag'));
     }
 
-
     public function update(TagRequest $request, Tag $Tag)
     {
         $input['name'] = $request->name;
@@ -73,7 +71,6 @@ class TagController extends Controller
             'alert-type' => 'success'
         ]);
     }
-
 
     public function destroy(Tag $Tag)
     {

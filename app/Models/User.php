@@ -13,14 +13,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    //  use  EntrustUserWithPermissionsTrait; // add this trait to your user model
 
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'first_name',
         'last_name',
@@ -33,11 +26,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'username',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+
     protected $hidden = [
         'password',
         'remember_token',
@@ -45,11 +34,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     protected $appends = ['full_name'];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -65,11 +49,25 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Review::class);
     }
 
+    public function addresses()
+    {
+        return $this->hasMany(UserAddress::class);
+    }
+
 
     public function status()
     {
         return $this->status == 1 ? 'Active' : 'In Active';
     }
 
+    // scope ===================================================================
+
+    public function scopeWhenSearch($query, $search)
+    {
+        return $query->when($search, function ($q) use ($search) {
+           return $q->where('username' , 'like' , "%$search%")
+            ->orWhere('first_name' , 'like' , "%$search%");
+        });
+    }
 
 }

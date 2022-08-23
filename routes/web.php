@@ -3,10 +3,14 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\backend\couponController;
 use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\CustomerAddressController;
 use App\Http\Controllers\Backend\ProductCategoriesController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\backend\ReviewController;
 use App\Http\Controllers\Backend\TagController;
+use App\Http\Controllers\Backend\CountryController;
+use App\Http\Controllers\Backend\StateController;
+use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -64,6 +68,20 @@ Route::prefix('/admin/')->name('admin.')->group(function () {
 
     // customers route ====================================================================
     Route::post('customers/delete', [CustomerController::class, 'delete_image'])->name('customer.delete_image');
+    Route::get('customer_addresses/get_customers', [CustomerController::class, 'get_customers'])->name('get_customers');
     Route::resource('customers', CustomerController::class);
+    Route::resource('customer_addresses', CustomerAddressController::class);
+
+
+    // countries  ============================================================================
+    Route::resource('countries', CountryController::class);
+
+    // states  ============================================================================
+    Route::get('states/get_states',[StateController::class,'get_states'])->name('states.get_states');
+    Route::resource('states', StateController::class);
+
+    // City  ============================================================================
+    Route::get('cities/get_states',[CityController::class,'get_cities'])->name('cities.get_cities');
+    Route::resource('cities', CityController::class);
 
 });

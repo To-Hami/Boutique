@@ -26,14 +26,14 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label class="text-small text-uppercase" for="username">Username</label>
-                                <input class="form-control form-control-lg" name="username" type="text" value="{{ old('username') }}" placeholder="Enter your user name">
+                                <input class="form-control form-control-lg" name="username" type="text" value="Tohami Abdalrahman" placeholder="Enter your user name">
                                 @error('username')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label class="text-small text-uppercase" for="password">Password</label>
-                                <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
+                                <input class="form-control form-control-lg" name="password" type="password" value="password" placeholder="Enter your password">
                                 @error('password')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                         </div>

@@ -54,16 +54,42 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#products"
            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-gift"></i>
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
             <span>Products</span>
         </a>
         <div id="products" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.products.index')}}">Products</a>
-                <hr>
-                <a class="collapse-item" href="{{route('admin.coupons.index')}}">Coupons</a>
-                <hr>
-                <a class="collapse-item" href="{{route('admin.reviews.index')}}">Reviews</a>
+                <a class="collapse-item" href="{{route('admin.products.index')}}"> <i class="fa fa-cart-plus" aria-hidden="true"></i>    <span class="mx-2">Products</span></a>
+
+            </div>
+        </div>
+
+    </li><!-- Nav Item - Pages products Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#coupons"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fa fa-gift" aria-hidden="true"></i>
+            <span>Coupons</span>
+        </a>
+        <div id="coupons" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.coupons.index')}}"> <i class="fa fa-gift" aria-hidden="true"></i>  <span class="mx-2"> Coupons </span> </a>
+
+            </div>
+        </div>
+
+    </li>
+
+    <!-- Nav Item - Pages reviews Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#reviews"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <span>Reviews</span>
+        </a>
+        <div id="reviews" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.reviews.index')}}"> <i class="fa fa-comment" aria-hidden="true"></i>  <span class="mx-2">Reviews </span></a>
             </div>
         </div>
 
@@ -77,13 +103,72 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customers"
            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-tag"></i>
+            <i class="fas fa-fw fa-users"></i>
             <span>Customers</span>
         </a>
         <div id="customers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.customers.index')}}">Customers</a>
+                <a class="collapse-item" href="{{route('admin.customers.index')}}"><i class="fas fa-fw fa-users"></i> <span class="mx-2">Customers</span></a>
             </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages customer_addresses Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customer_addresses"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-location-arrow"></i>
+            <span>Addresses</span>
+        </a>
+        <div id="customer_addresses" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.customer_addresses.index')}}"><i class="fas fa-fw fa-location-arrow"></i> <span class="mx-2"> Customers Address</span></a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages countries Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#countries"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-globe"></i>
+            <span>Countries</span>
+        </a>
+        <div id="countries" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.countries.index')}}">Countries</a>
+            </div>
+
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages states Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#states"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-map-marker"></i>
+            <span>States</span>
+        </a>
+        <div id="states" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.states.index')}}">States</a>
+            </div>
+
+        </div>
+    </li>
+    <!-- Nav Item - Pages states Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#cities"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-university"></i>
+            <span>Cities</span>
+        </a>
+        <div id="cities" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.cities.index')}}">Cities</a>
+
+            </div>
+
         </div>
     </li>
 

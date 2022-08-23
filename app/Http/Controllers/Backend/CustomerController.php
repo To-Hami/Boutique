@@ -143,8 +143,14 @@ class CustomerController extends Controller
             unlink('assets/users/' . $customer->user_image);
         }
 
-       $customer->user_image = null;
+        $customer->user_image = null;
         $customer->save();
         return true;
+    }
+
+    public function get_customers()
+    {
+        $customers = User::whenSearch(request()->search)->get(['username','id']);
+        return response()->json($customers);
     }
 }

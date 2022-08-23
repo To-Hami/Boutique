@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title> {{config('app.name')}}</title>
 
@@ -25,6 +27,9 @@
     <link href="{{asset('backend/vendor/summerNots/summernote-bs4.min.css')}}" rel="stylesheet">
     <link href="{{asset('backend/vendor/datepicker/themes/classic.css')}}" rel="stylesheet">
     <link href="{{asset('backend/vendor/datepicker/themes/classic.date.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/vendor/easyautocompleate/easy-autocomplete.min.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/vendor/easyautocompleate/easy-autocomplete.themes.min.css')}}" rel="stylesheet">
+
     <style>
         .picker__select--year, .picker__select--month {
             height: 39px;
@@ -92,6 +97,10 @@
 <script src="{{asset('backend/vendor/chart.js/Chart.min.js')}}"></script>
 
 <!-- Page level custom scripts -->
+<script src="{{asset('backend/vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('backend/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+<script src="{{asset('backend/vendor/easyautocompleate/jquery.easy-autocomplete.min.js')}}"></script>
+<script src="{{asset('backend/vendor/jquery-easing/jquery.easing.compatibility.js')}}"></script>
 <script src="{{asset('backend/js/demo/chart-area-demo.js')}}"></script>
 <script src="{{asset('backend/js/demo/chart-pie-demo.js')}}"></script>
 <script src="{{asset('backend/js/custom.js')}}"></script>
@@ -104,6 +113,20 @@
 <script src="{{asset('backend/vendor/datepicker/picker.js')}}"></script>
 <script src="{{asset('backend/vendor/datepicker/picker.date.js')}}"></script>
 <script src="{{asset('backend/vendor/datepicker/picker.time.js')}}"></script>
+
+
+<script>
+
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+        }
+
+    });
+
+
+</script>
 
 @stack('scripts')
 </body>
