@@ -31,7 +31,7 @@
         </a>
         <div id="categories" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.categories.index')}}">Categories</a>
+                <a class="collapse-item" href="{{route('admin.categories.index')}}"><i class="fa fa-list" aria-hidden="true"></i>    <span class="mx-2">Categories</span></a>
             </div>
         </div>
     </li>
@@ -45,7 +45,7 @@
         </a>
         <div id="tags" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.tags.index')}}">Tags</a>
+                <a class="collapse-item" href="{{route('admin.tags.index')}}"><i class="fa fa-tag" aria-hidden="true"></i>    <span class="mx-2">Tags</span></a>
             </div>
         </div>
     </li>
@@ -89,7 +89,7 @@
         </a>
         <div id="reviews" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.reviews.index')}}"> <i class="fa fa-comment" aria-hidden="true"></i>  <span class="mx-2">Reviews </span></a>
+                <a class="collapse-item" href="{{route('admin.reviews.index')}}"> <i class="fa fa-comments" aria-hidden="true"></i>  <span class="mx-2">Reviews </span></a>
             </div>
         </div>
 
@@ -136,7 +136,7 @@
         </a>
         <div id="countries" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.countries.index')}}">Countries</a>
+                <a class="collapse-item" href="{{route('admin.countries.index')}}"><i class="fa fa-globe" aria-hidden="true"></i>    <span class="mx-2">Countries</span></a>
             </div>
 
         </div>
@@ -151,7 +151,7 @@
         </a>
         <div id="states" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.states.index')}}">States</a>
+                <a class="collapse-item" href="{{route('admin.states.index')}}"><i class="fa fa-map-marker" aria-hidden="true"></i>    <span class="mx-2">States</span></a>
             </div>
 
         </div>
@@ -165,7 +165,23 @@
         </a>
         <div id="cities" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.cities.index')}}">Cities</a>
+                <a class="collapse-item" href="{{route('admin.cities.index')}}"><i class="fa fa-university" aria-hidden="true"></i>    <span class="mx-2">Cities</span></a>
+
+            </div>
+
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages company Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#company"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-train"></i>
+            <span>Shipping Companies</span>
+        </a>
+        <div id="company" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.shipping_companies.index')}}"><i class="fa fa-train" aria-hidden="true"></i>    <span class="mx-2">Shipping Companies</span></a>
 
             </div>
 

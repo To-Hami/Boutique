@@ -6,15 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateShippingCompaniesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('shipping_companies', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('code');
+            $table->string('description');
+            $table->boolean('fast')->default(false);
+            $table->unsignedDecimal('cost')->default('0.00');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

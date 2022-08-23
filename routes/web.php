@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\StateController;
 use App\Http\Controllers\Backend\CityController;
+use App\Http\Controllers\Backend\ShippingCompanyController;
 use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +39,7 @@ Route::get('detail', [FrontendController::class, 'detail'])->name('detail');
 Route::get('shop', [FrontendController::class, 'shop'])->name('shop');
 
 
-/********************** Dashboard   ******************************************/
+/**************************************************************** Dashboard   ******************************************/
 
 Route::prefix('/admin/')->name('admin.')->group(function () {
 
@@ -47,7 +48,6 @@ Route::prefix('/admin/')->name('admin.')->group(function () {
     Route::get('forgot', [App\Http\Controllers\Backend\BackendController::class, 'forgot'])->name('forgot');
     Route::get('index', [App\Http\Controllers\Backend\BackendController::class, 'dashboard'])->name('dashboard');
     Route::get('register', [App\Http\Controllers\Backend\BackendController::class, 'register'])->name('adminRegister');
-
 
     // category route ====================================================================
     Route::post('categories/delete', [CategoryController::class, 'delete_image'])->name('categories.delete_image');
@@ -58,13 +58,11 @@ Route::prefix('/admin/')->name('admin.')->group(function () {
     Route::resource('products', ProductController::class);
     Route::resource('coupons', couponController::class);
 
-
     // tag route ====================================================================
     Route::resource('tags', TagController::class);
 
     //  reviews route ====================================================================
     Route::resource('reviews', ReviewController::class);
-
 
     // customers route ====================================================================
     Route::post('customers/delete', [CustomerController::class, 'delete_image'])->name('customer.delete_image');
@@ -72,16 +70,17 @@ Route::prefix('/admin/')->name('admin.')->group(function () {
     Route::resource('customers', CustomerController::class);
     Route::resource('customer_addresses', CustomerAddressController::class);
 
-
-    // countries  ============================================================================
+    // countries  ================================================================================
     Route::resource('countries', CountryController::class);
 
-    // states  ============================================================================
+    // states  ====================================================================================
     Route::get('states/get_states',[StateController::class,'get_states'])->name('states.get_states');
     Route::resource('states', StateController::class);
 
-    // City  ============================================================================
+    // City  ========================================================================================
     Route::get('cities/get_states',[CityController::class,'get_cities'])->name('cities.get_cities');
     Route::resource('cities', CityController::class);
 
+    // shipping_companies  ============================================================================
+    Route::resource('shipping_companies',ShippingCompanyController::class);
 });
