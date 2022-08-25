@@ -5,15 +5,15 @@
 
         <div class="card-heard py-3 d-flex mx-2">
 
-            <h6 class="m-0 font-weight-bold text-white btn btn-primary">Create Coupon </h6>
+            <h6 class="m-0 font-weight-bold text-white btn btn-primary">Create Reviews </h6>
 
             <div class="ml-auto">
 
-                <a href="{{route('admin.coupons.index')}}" class="btn btn-primary">
+                <a href="{{route('admin.reviews.index')}}" class="btn btn-primary">
 
                     <span class="icon text-white-50"> <i class="fa fa-list"></i> </span>
 
-                    <span class="text">All Coupons</span>
+                    <span class="text">All Reviews</span>
 
                 </a>
             </div>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="card-body">
-        <form action="{{route('admin.coupons.store')}}" method="post">
+        <form action="{{route('admin.reviews.store')}}" method="post">
 
             @csrf
             @method('post')

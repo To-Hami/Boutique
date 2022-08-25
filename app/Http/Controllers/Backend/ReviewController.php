@@ -24,9 +24,10 @@ class ReviewController extends Controller
     }
 
 
-    public function show(Review $review)
+
+    public function create( )
     {
-        return view('backend.reviews.show', compact('review'));
+        return view('backend.reviews.create');
 
     }
 

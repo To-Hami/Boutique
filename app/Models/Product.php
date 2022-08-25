@@ -37,9 +37,9 @@ class Product extends Model
 
     // relation  ==================================================
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsTo(Category::class, 'product_category_id', 'id');
+        return $this->belongsTo(Category::class);
     }
 
     public function tags(): MorphToMany
@@ -57,6 +57,7 @@ class Product extends Model
         return $this->hasMany(Review::class);
     }
 
+
     //function =========================================================
     public function status()
     {
@@ -69,4 +70,22 @@ class Product extends Model
     }
 
     //scope =========================================================
+
+    public function scopeFeatured($query){
+        return $query->whereFeatured(true);
+    }
+
+    public function scopeActive($query){
+        return $query->whereStatus(true);
+    }
+
+    public function scopeHasQuantity($query){
+        return $query->where('quantity'  , '>', 0);
+    }
+
+    public function scopeActiveCategory($query){
+        return $query->whereHas('category'  , function($query){
+            return $query->whereStatus(1);
+        });
+    }
 }

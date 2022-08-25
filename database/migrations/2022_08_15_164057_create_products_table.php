@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('quantity')->default(0);
             $table->boolean('featured')->default(false);
             $table->boolean('status')->default(false);
-            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
 
             $table->timestamps();
         });

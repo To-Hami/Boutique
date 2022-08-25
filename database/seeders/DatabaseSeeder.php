@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(reviewsTableSeeder::class);
         $this->call(worldSeeder::class);
         $this->call(WorldStatusSeeder::class);
+        $this->call(productReviewTableSeeder::class);
     }
 }

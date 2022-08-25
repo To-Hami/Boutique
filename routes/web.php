@@ -34,8 +34,9 @@ Auth::routes(['verify' => true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('cart', [FrontendController::class, 'cart'])->name('cart');
+Route::get('detail', [FrontendController::class, 'cart'])->name('detail');
 Route::get('checkout', [FrontendController::class, 'checkout'])->name('checkout');
-Route::get('detail', [FrontendController::class, 'detail'])->name('detail');
+Route::get('product/{slug?}', [FrontendController::class, 'product'])->name('product');
 Route::get('shop', [FrontendController::class, 'shop'])->name('shop');
 
 
@@ -84,3 +85,7 @@ Route::prefix('/admin/')->name('admin.')->group(function () {
     // shipping_companies  ============================================================================
     Route::resource('shipping_companies',ShippingCompanyController::class);
 });
+
+
+/**************************************************************** livewire   ******************************************/
+

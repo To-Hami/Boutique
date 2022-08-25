@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="hero pb-3 bg-cover bg-center d-flex align-items-center"
-             style="background: url({{asset('frontend/img/hero-banner-alt.jpg')}})">
+             style="background: url({{asset('assets/sliders/hero-banner-alt.jpg')}})">
         <div class="container py-5">
             <div class="row px-4 px-lg-5">
                 <div class="col-lg-6">
@@ -22,222 +22,30 @@
             <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
         </header>
         <div class="row">
-            <div class="col-md-4"><a class="category-item" href="{{route('shop')}}"><img class="img-fluid"
-                                                                                      src="{{asset('frontend/img/cat-img-1.jpg')}}"
-                                                                                      alt=""/><strong
+            <div class="col-md-4"><a class="category-item" href="{{route('product' , $product_categories[0]->slug)}}">
+                    <img class="img-fluid" src="{{asset('assets/categories/cat-img-1.jpg')}}" alt=""/><strong
                         class="category-item-title">Clothes</strong></a>
             </div>
-            <div class="col-md-4"><a class="category-item mb-4" href="{{route('shop')}}"><img class="img-fluid"
-                                                                                           src="{{asset('frontend/img/cat-img-2.jpg')}}"
-                                                                                           alt=""/><strong
+            <div class="col-md-4"><a class="category-item mb-4" href="{{route('product' , $product_categories[1]->slug)}}">
+                    <img class="img-fluid"src="{{asset('assets/categories/cat-img-2.jpg')}}" alt=""/><strong
                         class="category-item-title">Shoes</strong></a><a class="category-item"
-                                                                         href="{{route('shop')}}"><img class="img-fluid"
-                                                                                                    src="{{asset('frontend/img/cat-img-3.jpg')}}"
-                                                                                                    alt=""/><strong
+                                    href="{{route('product' , $product_categories[2]->slug)}}"><img class="img-fluid"
+                                         src="{{asset('assets/categories/cat-img-3.jpg')}}"  alt=""/><strong
                         class="category-item-title">Watches</strong></a>
             </div>
-            <div class="col-md-4"><a class="category-item" href="{{route('shop')}}"><img class="img-fluid"
-                                                                                      src="{{asset('frontend/img/cat-img-4.jpg')}}"
-                                                                                      alt=""/><strong
+            <div class="col-md-4"><a class="category-item" href="{{route('product' , $product_categories[3]->slug)}}">
+                    <img class="img-fluid"src="{{asset('assets/categories/cat-img-4.jpg')}}" alt=""/><strong
                         class="category-item-title">Electronics</strong></a>
             </div>
         </div>
     </section>
     <!-- TRENDING PRODUCTS-->
-    <section class="py-5">
-        <header>
-            <p class="small text-muted small text-uppercase mb-1">Made the hard way</p>
-            <h2 class="h5 text-uppercase mb-4">Top trending products</h2>
-        </header>
-        <div class="row">
 
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-"></div>
-                        <a class="d-block" href="{{route('detail')}}"><img class="img-fluid w-100" src="{{asset('frontend/img/product-1.jpg')}}"
-                                                                        alt="..."></a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}p">Kui Ye Chen’s AirPods</a></h6>
-                    <p class="small text-muted">$250</p>
-                </div>
-            </div>
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-primary">Sale</div>
-                        <a class="d-block" href="{{route('detail')}}p"><img class="img-fluid w-100" src="{{asset('frontend/img/product-2.jpg')}}"
-                                                                        alt="..."></a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}">Air Jordan 12 gym red</a></h6>
-                    <p class="small text-muted">$300</p>
-                </div>
-            </div>
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-"></div>
-                        <a class="d-block" href="{{route('detail')}}"><img class="img-fluid w-100" src="{{asset('frontend/img/product-3.jpg')}}"
-                                                                        alt="..."></a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}">Cyan cotton t-shirt</a></h6>
-                    <p class="small text-muted">$25</p>
-                </div>
-            </div>
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-info">New</div>
-                        <a class="d-block" href="{{route('detail')}}"><img class="img-fluid w-100" src="{{asset('frontend/img/product-4.jpg')}}"
-                                                                        alt="..."></a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}">Timex Unisex Originals</a></h6>
-                    <p class="small text-muted">$351</p>
-                </div>
-            </div>
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-danger">Sold</div>
-                        <a class="d-block" href="{{route('detail')}}"><img class="img-fluid w-100" src="{{asset('frontend/img/product-5.jpg')}}"
-                                                                        alt="..."></a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}">Red digital smartwatch</a></h6>
-                    <p class="small text-muted">$250</p>
-                </div>
-            </div>
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-"></div>
-                        <a class="d-block" href="{{route('detail')}}"><img class="img-fluid w-100" src="{{asset('frontend/img/product-6.jpg')}}"
-                                                                        alt="..."></a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}">Nike air max 95</a></h6>
-                    <p class="small text-muted">$300</p>
-                </div>
-            </div>
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-"></div>
-                        <a class="d-block" href="{{route('detail')}}"><img class="img-fluid w-100" src="{{asset('frontend/img/product-7.jpg')}}"
-                                                                        alt="..."></a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}">Joemalone Women prefume</a></h6>
-                    <p class="small text-muted">$25</p>
-                </div>
-            </div>
-            <!-- PRODUCT-->
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="product text-center">
-                    <div class="position-relative mb-3">
-                        <div class="badge text-white bg-"></div>
-                        <a class="d-block" href="{{route('detail')}}"><img class="img-fluid w-100" src="{{asset('frontend/img/product-8.jpg')}}" alt="...">
 
-                        </a>
-                        <div class="product-overlay">
-                            <ul class="mb-0 list-inline">
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark"
-                                                                        href="{{route('cart')}}">Add to cart</a></li>
-                                <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark"
-                                                                     href="#productView" data-bs-toggle="modal"><i
-                                            class="fas fa-expand"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h6><a class="reset-anchor" href="{{route('detail')}}">Apple Watch</a></h6>
-                    <p class="small text-muted">$351</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<livewire:frontend.featured-product/>
+
+
+{{----}}
     <!-- SERVICES-->
     <section class="py-5 bg-light">
         <div class="container">

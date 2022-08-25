@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::with('categories', 'tags')
+        $products = Product::with('category', 'tags')
             ->when(\request()->keyword != null, function ($query) {
                 $query->search(\request()->keyword);
             })
